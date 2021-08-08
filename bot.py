@@ -21,13 +21,13 @@ LIST = {}
 
 @app.on_message(filters.command(['start']))
 async def start(client, message):
- await message.reply_text(text =f"""Hello {message.from_user.first_name }image to pdf bot 
+ await message.reply_text(text =f"""Hello, {message.from_user.first_name }Welcome to image to PDF bot 
 
-i can convert image to pdf""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
+I can convert image into PDF""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/TgxBotz_Chat") ],
-                 [InlineKeyboardButton("Repo 🇮🇳", url="https://gitHub.com/shrvan42/imagetopdfbot") ]       ]        ) )
+                    InlineKeyboardButton("Support" ,url="https://t.me/BHZBot_Support") ],
+                 [InlineKeyboardButton("Updates", url="https://t.me/BioHazard_Bots") ]       ]        ) )
 
 
 
@@ -47,7 +47,7 @@ async def pdf(client,message):
  image = Image.open(file)
  img = image.convert('RGB')
  LIST[message.from_user.id].append(img)
- await ms.edit(f"{len(LIST[message.from_user.id])} image   Successful created PDF if you want add more image Send me One by one\n\n **if done click here 👉 /convert** ")
+ await ms.edit(f"{len(LIST[message.from_user.id])} Image Successfulfy converted into PDF, if you want add more image send me one by one\n\n **If done click here 👉 /convert** ")
  
 
 @app.on_message(filters.command(['convert']))
@@ -63,7 +63,7 @@ async def done(client,message):
  path = f"{message.from_user.id}" + ".pdf"
  images[0].save(path, save_all = True, append_images = images[1:])
  
- await client.send_document(message.from_user.id, open(path, "rb"), caption = "Here your pdf !!")
+ await client.send_document(message.from_user.id, open(path, "rb"), caption = "Alright, Here your pdf!")
  os.remove(path)
  
  
