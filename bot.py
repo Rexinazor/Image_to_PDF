@@ -26,8 +26,8 @@ async def start(client, message):
 I can convert image into PDF""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Support" ,url="https://t.me/BHZBot_Support") ],
-                 [InlineKeyboardButton("Updates", url="https://t.me/BioHazard_Bots") ]       ]        ) )
+                    InlineKeyboardButton("Support" ,url="https://t.me/HazardBot_Support") ],
+                 [InlineKeyboardButton("Updates", url="https://t.me/Hazard_Bots") ]       ]        ) )
 
 
 
